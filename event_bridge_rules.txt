@@ -1,0 +1,29 @@
+# Event Bridge Pattern To Listen S3 File Upload
+
+{
+  "source": ["aws.s3"],
+  "detail-type": ["Object Created"],
+  "detail": {
+    "bucket": {
+      "name": ["movies-gds"]
+    },
+    "object": {
+      "key": [{
+        "suffix": ".csv"
+      }]
+    }
+  }
+}
+
+=============
+
+# Event Bridge Pattern For Data Quality Success & Failure
+
+{
+  "source": ["aws.glue-dataquality"],
+  "detail-type": ["Data Quality Evaluation Results Available"],
+  "detail": {
+    "state": ["FAILED", "SUCCEEDED"]
+  }
+}
+
